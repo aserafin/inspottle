@@ -3,7 +3,7 @@ class ActivitiesAPI < Base
     desc 'list all activities'
 
     get '/' do
-      Activity.order('name ASC').to_a
+      Activity.order('name ASC')
     end
   end
 end

@@ -33,9 +33,10 @@ class Base < Grape::API
     header['Access-Control-Request-Method'] = '*'
   end
 
-  mount UsersAPI
   mount ActivitiesAPI
+  mount EventsAPI
   mount SpotsAPI
+  mount UsersAPI
 
   add_swagger_documentation(
       base_path: "/api",
