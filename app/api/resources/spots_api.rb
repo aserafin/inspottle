@@ -1,4 +1,4 @@
-class SpotsAPI < Base
+class Resources::SpotsAPI < Base
   resource :spots do
     desc 'list all available spots'
     get '/', each_serializer: SpotSerializer do

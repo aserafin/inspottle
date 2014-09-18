@@ -1,4 +1,4 @@
-class UsersAPI < Base
+class Resources::UsersAPI < Base
   resource :users do
     desc 'login user with facebook_id and facebook_token'
     params do
