@@ -1,4 +1,4 @@
-class ActivitiesAPI < Base
+class Resources::ActivitiesAPI < Base
   resource :activities do
     desc 'list all activities'
 

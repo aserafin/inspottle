@@ -11,6 +11,7 @@ gem 'slim', '~> 2.0.3'
 gem 'slim-rails'
 
 gem 'angularjs-rails'
+gem 'angularjs-rails-resource', '~> 1.1.1'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
