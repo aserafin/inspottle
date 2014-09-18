@@ -24,6 +24,8 @@ class Base < Grape::API
   end
 
   mount UsersAPI
+  mount ActivitiesAPI
+  mount SpotsAPI
 
   add_swagger_documentation(
       base_path: "/api",
