@@ -1,4 +1,4 @@
-class EventsAPI < Base
+class Resources::EventsAPI < Base
   resource :events do
     desc 'list all upcoming event'
     get '/' do
