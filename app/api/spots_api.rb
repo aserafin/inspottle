@@ -8,7 +8,7 @@ class SpotsAPI < Base
     desc 'create new spot'
     params do
       requires :auth_token, type: String
-      requires :user, type: Hash do
+      requires :spot, type: Hash do
         requires :name, type: String
         requires :activity_ids, type: Array
         optional :latitude, type: BigDecimal
@@ -23,7 +23,7 @@ class SpotsAPI < Base
     end
     post '/', each_serializer: SpotSerializer do
       authenticate!
-      Spot.new(declared(params, include_missing: false)[:user].merge(creator_id: current_user.id)).tap(&:save!)
+      Spot.new(declared(params, include_missing: false)[:spot].merge(creator_id: current_user.id)).tap(&:save!)
     end
   end
 end
