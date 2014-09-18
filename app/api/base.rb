@@ -18,6 +18,16 @@ class Base < Grape::API
     puts "#{e.message}\n\n#{e.backtrace.join("\n")}"
   end
 
+  helpers do
+    def current_user
+      @current_user ||= User.authorize!(params[:auth_token])
+    end
+
+    def authenticate!
+      error!('401 Unauthorized', 401) unless current_user
+    end
+  end
+
   before do
     header['Access-Control-Allow-Origin'] = '*'
     header['Access-Control-Request-Method'] = '*'

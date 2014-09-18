@@ -3,7 +3,6 @@ class CreateActivities < ActiveRecord::Migration
     create_table :activities do |t|
       t.column :name, :string, null: false
       t.attachment :icon
-
       t.timestamps
     end
 
