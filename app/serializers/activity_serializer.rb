@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
 
-  attributes :name, :icon_url
+  attributes :id, :name, :icon_url
 
 end
