@@ -5,7 +5,7 @@ class UsersAPI < Base
       requires :facebook_id, type: String
       requires :facebook_token, type: String
     end
-    post 'login' do
+    post 'login', serializer: CurrentUserSerializer do
       LoginService.new(params[:facebook_id], params[:facebook_token]).login!
     end
   end

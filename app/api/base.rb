@@ -2,6 +2,10 @@ class Base < Grape::API
   format :json
   formatter :json, Grape::Formatter::ActiveModelSerializers
 
+  rescue_from ActiveRecord::RecordInvalid do |e|
+    rack_response e.record.errors.to_json, 422
+  end
+
   rescue_from ActiveRecord::RecordNotFound do |e|
     rack_response e.to_json, 404
   end
