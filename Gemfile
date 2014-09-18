@@ -27,3 +27,5 @@ gem 'slim', '~> 2.0.3'
 gem 'slim-rails'
 
 gem 'rails_12factor', group: :production
+
+ruby "2.1.2"
