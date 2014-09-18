@@ -29,4 +29,11 @@ gem 'geocoder'
 
 gem 'figaro'
 
+gem 'seed-fu'
+
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+end
+
 ruby '2.1.2'

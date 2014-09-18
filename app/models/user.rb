@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :facebook_id, presence: true, uniqueness: true
   validates :facebook_token, presence: true, uniqueness: true
 
-  def authorize!(auth_token)
+  def self.authorize!(auth_token)
     User.where(auth_token: auth_token).first!
   end
 
