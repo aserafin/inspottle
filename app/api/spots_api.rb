@@ -7,6 +7,7 @@ class SpotsAPI < Base
 
     desc 'create new spot'
     params do
+      requires :auth_token, type: String
       requires :name, type: String
       requires :activity_ids, type: Array
       optional :latitude, type: BigDecimal
@@ -19,6 +20,8 @@ class SpotsAPI < Base
       optional :country, type: String
     end
     post '/', each_serializer: SpotSerializer do
+      authenticate!
+
       
     end
   end
