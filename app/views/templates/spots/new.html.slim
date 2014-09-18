@@ -1,0 +1,15 @@
+h1 Dodaj nowy spot
+
+div
+  input type='text' ng-model="name" placeholder='Nazwa spotu'
+div
+  input type='textfield' ng-model="description" placeholder='Opis'
+
+div ng-repeat='activity in activities'
+  input type='checkbox' name='activities' value="{{activity.id}}" {{activity.name}}
+#map_canvas
+  google-map bounds="map.bounds" center="map.center" draggable="true" options="options" zoom="map.zoom" events="eventsProperty"
+    markers coords="'self'" models="markers"
+
+div
+  button ng-click='createSpot()' Dodaj spot

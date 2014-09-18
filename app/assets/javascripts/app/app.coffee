@@ -2,7 +2,8 @@ app = angular.module "inspotle", [
   'ui.router',
   'facebook',
   'rails',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'google-maps'
 ]
 
 app.config ($stateProvider, $urlRouterProvider) ->
