@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918095611) do
+ActiveRecord::Schema.define(version: 20140918104106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.string   "name",              null: false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["name"], name: "index_activities_on_name", unique: true, using: :btree
+
+  create_table "spots", force: true do |t|
+    t.string   "name",              null: false
+    t.decimal  "latitude",          null: false
+    t.decimal  "longitude",         null: false
+    t.text     "short_description"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "post_code"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name",           null: false
