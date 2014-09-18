@@ -62,10 +62,10 @@ GEM
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    geocoder (1.2.5)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    geocoder (1.2.5)
     grape (0.9.0)
       activesupport
       builder
@@ -96,9 +96,6 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
     ice_nine (0.11.0)
-    jquery-rails (3.1.2)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     json (1.8.1)
     koala (1.10.1)
       addressable
@@ -203,16 +200,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 1.5.7)
   angularjs-rails
+  aws-sdk (~> 1.5.7)
   coffee-rails (~> 4.0.0)
-  geocoder
   figaro
+  geocoder
   grape
   grape-active_model_serializers
   grape-swagger
   grape-swagger-rails
-  jquery-rails
   koala (~> 1.10.0rc)
   paperclip (~> 4.2)
   pg
