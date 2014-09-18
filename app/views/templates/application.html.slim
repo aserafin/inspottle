@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Inspotle
+    = javascript_include_tag :application
+    = stylesheet_link_tag :application, media: :all
+    = csrf_meta_tags
+
+  body ng-app='inspotie' ui-view='' state-class=''
