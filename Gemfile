@@ -17,4 +17,6 @@ gem "koala", "~> 1.10.0rc"
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 
-ruby "2.1.2"
+ruby '2.1.2'
+
+gem 'angularjs-rails'
