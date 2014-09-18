@@ -25,7 +25,8 @@ gem 'grape-swagger-rails'
 
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
-
 gem 'geocoder'
 
 ruby '2.1.2'
+gem 'angularjs-rails'
+gem 'figaro'
