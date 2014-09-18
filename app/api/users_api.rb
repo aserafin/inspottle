@@ -1,5 +1,6 @@
 class UsersAPI < Base
   resource :users do
+    desc 'login user with facebook_id and facebook_token'
     params do
       requires :facebook_id, type: String
       requires :facebook_token, type: String

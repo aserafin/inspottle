@@ -14,6 +14,11 @@ class Base < Grape::API
     puts "#{e.message}\n\n#{e.backtrace.join("\n")}"
   end
 
+  before do
+    header['Access-Control-Allow-Origin'] = '*'
+    header['Access-Control-Request-Method'] = '*'
+  end
+
   mount UsersAPI
 
   add_swagger_documentation
