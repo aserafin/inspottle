@@ -1,6 +1,6 @@
 class Spot < ActiveRecord::Base
 
-  has_many :spot_activities
+  has_many :spot_activities, dependent: :destroy
   has_many :activities, through: :spot_activities
   belongs_to :creator, class_name: 'User'
 

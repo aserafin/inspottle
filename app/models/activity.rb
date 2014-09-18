@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
 
-  has_many :spot_activities
+  has_many :spot_activities, dependent: :destroy
   has_many :spots, through: :spot_activities
 
   has_attached_file :icon, :styles => { :medium => '300x300>' }, :default_url => '/images/:style/missing.png'
