@@ -1,31 +1,19 @@
 angular.module("inspotle").
 
-controller "SpotsCtrl", ($scope, Activity) ->
-  $scope.name = ''
-  $scope.description = ''
-
-  $scope.markers = []
-
+controller "SpotsCtrl", ($scope, Spot) ->
   $scope.map =
     center:
       latitude: 52.0997
       longitude: 19.0722
     zoom: 6
 
-  $scope.eventsProperty =
-    click: (mapModel, eventName, originalEventArgs) ->
-      $scope.$apply ->
-        $scope.markers.push
-          id: 'new_spot_position'
-          options:
-            draggable: true
-          latitude: originalEventArgs[0].latLng.k
-          longitude: originalEventArgs[0].latLng.B
+  $scope.markers = []
 
+  Spot.query().then (spots) ->
+    $scope.spots = spots
 
-  Activity.query().then (response) ->
-    $scope.activities = response.activities
-
-
-  $scope.createSpot = ->
-    alert 'Spot created!'
+    $scope.markers = spots.map (spot) ->
+      id: spot.id
+      latitude: spot.latitude
+      longitude: spot.longitude
+      title: spot.name
