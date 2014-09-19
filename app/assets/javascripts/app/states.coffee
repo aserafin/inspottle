@@ -12,10 +12,15 @@ config ($stateProvider) ->
     url: '/'
     templateUrl: 'templates/static/landing'
 
+  .state 'main.spots',
+    url: '/spots/'
+    templateUrl: 'templates/spots/index'
+    controller: 'SpotsCtrl'
+
   .state 'main.new-spot',
     url: '/spots/new'
     templateUrl: 'templates/spots/new'
-    controller: 'SpotsCtrl'
+    controller: 'NewSpotCtrl'
 
   .state 'main.spot',
     url: '/spots/:spotId'
