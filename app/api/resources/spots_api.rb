@@ -1,8 +1,13 @@
 class Resources::SpotsAPI < Base
   resource :spots do
     desc 'list all available spots'
+    params do
+      optional :latitude, type: BigDecimal
+      optional :longitude, type: BigDecimal
+      optional :distance, type: Integer
+    end
     get '/', each_serializer: SpotSerializer do
-      Spot.order('name ASC').to_a
+      SpotsRepository.fetch(params[:latitude], params[:longitude], params[:distance])
     end
 
     desc 'create new spot'

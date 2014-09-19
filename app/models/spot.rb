@@ -2,6 +2,8 @@ class Spot < ActiveRecord::Base
 
   has_many :spot_activities, dependent: :destroy
   has_many :activities, through: :spot_activities
+  has_many :events
+
   belongs_to :creator, class_name: 'User'
 
   validates :name, presence: true
