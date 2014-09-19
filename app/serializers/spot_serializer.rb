@@ -4,6 +4,7 @@ class SpotSerializer < ActiveModel::Serializer
   attributes :distance
 
   has_many :available_events, each_serializer: EventSerializer, root: :events
+  has_many :activities, each_serializer: ActivitySerializer
 
   def distance
     object.try(:distance)
