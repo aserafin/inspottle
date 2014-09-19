@@ -32,6 +32,7 @@ gem 'figaro'
 
 gem 'seed-fu'
 
+
 group :development do
   gem 'pry'
   gem 'pry-rails'

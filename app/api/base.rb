@@ -14,6 +14,10 @@ class Base < Grape::API
     rack_response e.to_json, 500
   end
 
+  rescue_from Exceptions::PermissionError do |e|
+    rack_response e.to_json, 401
+  end
+
   rescue_from :all do |e|
     puts "#{e.message}\n\n#{e.backtrace.join("\n")}"
   end
