@@ -7,8 +7,8 @@ class Event < ActiveRecord::Base
   has_many :event_users, dependent: :destroy
   has_many :users, through: :event_users
 
-  scope :upcoming, -> { where(['starts_at >= ?', Time.now - 1.hour]) }
-  scope :recent, -> { where(['starts_at < ?', Time.now - 1.hour]) }
+  scope :future,  -> { where('starts_at > ?', Time.zone.now + 30.minutes) }
+  scope :current, -> { where('starts_at >= ? and starts_at < ?', Time.zone.now - 30.minutes, Time.zone.now + 30.minutes) }
 
   validates :activity_id, :spot_id, :user_id, :starts_at, presence: true
 
