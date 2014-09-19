@@ -17,6 +17,6 @@ class Event < ActiveRecord::Base
   private
 
   def check_starts_at
-    self.starts_at ||= Time.now
+    self.starts_at ||= Time.zone.now
   end
 end
