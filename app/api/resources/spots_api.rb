@@ -2,12 +2,13 @@ class Resources::SpotsAPI < Base
   resource :spots do
     desc 'list all available spots'
     params do
+      optional :activity_id, type: Integer, desc: 'id of activity'
       optional :latitude, type: BigDecimal
       optional :longitude, type: BigDecimal
       optional :distance, type: Integer
     end
     get '/', each_serializer: SpotSerializer do
-      SpotsRepository.fetch(params[:latitude], params[:longitude], params[:distance])
+      SpotsRepository.fetch(params[:activity_id], params[:latitude], params[:longitude], params[:distance])
     end
 
     desc 'show existing spot'

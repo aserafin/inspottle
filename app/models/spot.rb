@@ -10,6 +10,8 @@ class Spot < ActiveRecord::Base
 
   validates :name, presence: true
 
+  scope :by_activity, -> (activity_id) { includes(:activities).references(:activities).where(activities: { id:  activity_id}) }
+
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
