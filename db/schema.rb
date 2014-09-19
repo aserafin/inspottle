@@ -11,19 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918122123) do
+ActiveRecord::Schema.define(version: 20140919130028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: true do |t|
-    t.string   "name",              null: false
-    t.string   "icon_file_name"
-    t.string   "icon_content_type"
-    t.integer  "icon_file_size"
-    t.datetime "icon_updated_at"
+    t.string   "name",                                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",                default: 1, null: false
+    t.string   "icon_white_file_name"
+    t.string   "icon_white_content_type"
+    t.integer  "icon_white_file_size"
+    t.datetime "icon_white_updated_at"
+    t.string   "icon_blue_file_name"
+    t.string   "icon_blue_content_type"
+    t.integer  "icon_blue_file_size"
+    t.datetime "icon_blue_updated_at"
   end
 
   add_index "activities", ["name"], name: "index_activities_on_name", unique: true, using: :btree

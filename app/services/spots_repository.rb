@@ -4,7 +4,8 @@ class SpotsRepository
     pagination_options[:per_page] ||= 20
     distance ||= 10
 
-    spots = Spot.includes(:activities, events: [:user, :activity, :users]).limit(pagination_options[:per_page]).offset(pagination_options[:per_page] * pagination_options[:page])
+    spots = Spot.includes(:activities, events: [:user, :activity, :users])
+    spots = spots.limit(pagination_options[:per_page]).offset(pagination_options[:per_page] * pagination_options[:page])
     spots = spots.joins('left join (select max(starts_at) as starts_at, spot_id from events group by spot_id) as spot_events on (spots.id = spot_events.spot_id)')
 
     spots = spots.by_activity(activity_id) if activity_id.present?

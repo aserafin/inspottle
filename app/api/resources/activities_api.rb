@@ -3,7 +3,7 @@ class Resources::ActivitiesAPI < Base
     desc 'list all activities'
 
     get '/' do
-      Activity.order('name ASC')
+      Activity.order('position asc')
     end
   end
 end
