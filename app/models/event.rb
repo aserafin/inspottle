@@ -15,8 +15,8 @@ class Event < ActiveRecord::Base
   before_validation :check_starts_at
 
   def event_type
-    return 'upcoming' if starts_at >= Time.zone.now - 1.hour
-    return 'recent' if starts_at < Time.zone.now - 1.hour && starts_at >= Time.zone.now - 1.day
+    return 'future'   if starts_at > Time.zone.now + 30.minutes
+    return 'current'  if starts_at >= Time.zone.now - 30.minutes && starts_at < Time.zone.now + 30.minutes
     return 'old'
   end
 
