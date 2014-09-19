@@ -21,3 +21,8 @@ config ($stateProvider) ->
     url: '/spots/:spotId'
     templateUrl: 'templates/spots/show'
     controller: 'SpotCtrl'
+
+  .state 'main.new-event',
+    url: '/spots/:spotId/events/new'
+    templateUrl: 'templates/events/new'
+    controller: 'EventsCtrl'

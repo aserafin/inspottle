@@ -15,6 +15,8 @@ class Resources::EventsAPI < Base
       requires :auth_token, type: String
       requires :event, type: Hash do
         requires :spot_id, type: Integer
+        requires :activity_id, type: Integer
+
 
         optional :starts_at, type: DateTime
       end

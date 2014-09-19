@@ -1,0 +1,15 @@
+h1 Dodaj nowy event
+
+div ng-repeat='activity in activities'
+  .radio
+    label
+      input type='radio' ng-model='$parent.activityId' ng-value='activity.id' name='event-activity'
+      ' {{ activity.name }}
+
+
+datepicker ng-model="eventDate" min-date="minDate" show-weeks="true" class="well well-sm"
+
+timepicker ng-model="eventTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"
+
+div
+  button ng-click='createEvent()' Dodaj Event

@@ -1,3 +1,6 @@
 h1 ng-bind='spot.name'
 
 p ng-bind='spot.shortDescription'
+
+a ui-sref='main.new-event({spotId: spot.id})'
+  'Add new Event

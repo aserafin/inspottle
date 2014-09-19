@@ -1,4 +1,7 @@
 app = angular.module "inspotle", [
+  'ui.bootstrap.datepicker',
+  'ui.bootstrap.timepicker',
+  'ui.bootstrap.tpls',
   'ui.router',
   'facebook',
   'rails',
