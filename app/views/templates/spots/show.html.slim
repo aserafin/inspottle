@@ -2,5 +2,13 @@ h1 ng-bind='spot.name'
 
 p ng-bind='spot.shortDescription'
 
+div ng-repeat='activity in spot.activities'
+  p ng-bind='activity.name'
+
+div ng-repeat='event in spot.events'
+  p
+    span ng-bind='event.activity.name'
+    span ng-bind='event.startsAt'
+
 a ui-sref='main.new-event({spotId: spot.id})'
   'Add new Event
