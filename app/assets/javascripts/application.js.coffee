@@ -4,6 +4,5 @@
 #= require angularjs/rails/resource
 #= require angular-local-storage
 #= require lodash-underscore
-#= require google-maps
 #= require angular-google-maps.min
 #= require_tree .
