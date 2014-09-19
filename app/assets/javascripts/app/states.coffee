@@ -16,3 +16,8 @@ config ($stateProvider) ->
     url: '/spots/new'
     templateUrl: 'templates/spots/new'
     controller: 'SpotsCtrl'
+
+  .state 'main.spot',
+    url: '/spots/:spotId'
+    templateUrl: 'templates/spots/show'
+    controller: 'SpotCtrl'
