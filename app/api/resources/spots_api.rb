@@ -10,6 +10,14 @@ class Resources::SpotsAPI < Base
       SpotsRepository.fetch(params[:latitude], params[:longitude], params[:distance])
     end
 
+    desc 'show existing spot'
+    params do
+      requires :id, type: Integer, desc: 'Spot id'
+    end
+    get ':id', each_serializer: SpotSerializer do
+      Spot.where(id: params[:id]).first!
+    end
+
     desc 'create new spot'
     params do
       requires :auth_token, type: String

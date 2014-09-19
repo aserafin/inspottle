@@ -19,5 +19,6 @@
 /log/*.log
 /tmp
 
+.DS_store
 .rvmrc
 
