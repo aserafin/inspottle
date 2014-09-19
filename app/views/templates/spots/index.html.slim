@@ -2,3 +2,10 @@ h1 Lista spotów
 
 div ng-repeat='spot in spots'
   a ui-sref="main.spot({spotId: spot.id})" {{spot.name}}
+
+#map_canvas
+  google-map bounds="map.bounds" center="map.center" draggable="true" options="options" zoom="map.zoom" events="eventsProperty"
+    markers coords="'self'" models="markers"
+      windows
+        div ng-non-bindable=''
+          | {{title}}
